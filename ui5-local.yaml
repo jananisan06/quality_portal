@@ -34,7 +34,7 @@ server:
             url: http://172.17.19.24:8000
             destination: PORTAL
     - name: sap-fe-mockserver
-      beforeMiddleware: csp
+      beforeMiddleware: fiori-tools-proxy
       configuration:
         mountPath: /
         services:
@@ -44,6 +44,10 @@ server:
             generateMockData: true
           - urlPath: /sap/opu/odata/sap/ZKSJ_INSPECTION_QP_CDS/
             metadataPath: ./webapp/localService/inspectionService/metadata.xml
+            mockdataPath: ./webapp/localService/inspectionService/data
+            generateMockData: true
+          - urlPath: /sap/opu/odata/sap/ZKSJ_INSPECTION_QP_CDS
+            metadataPath: ./webapp/localService/inspectionService/data
             mockdataPath: ./webapp/localService/inspectionService/data
             generateMockData: true
         annotations:
