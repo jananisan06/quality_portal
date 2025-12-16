@@ -14,10 +14,10 @@
                 <ColumnListItem type="Navigation" press="onPressLot">
                     <cells>
                         <Text text="{inspection>InspectionLot}" />
-                        <Text text="{inspection>Material}" />
+                        <Text text="{inspection>MaterialNumber}" />
                         <Text text="{inspection>Plant}" />
-                        <Text text="{inspection>LotQuantity}" />
-                        <Text text="{inspection>UsageDecision}" />
+                        <Text text="{inspection>LotQuantity} {inspection>UoM}" />
+                        <Text text="{inspection>UsageDecisionCode}" />
                     </cells>
                 </ColumnListItem>
             </items>

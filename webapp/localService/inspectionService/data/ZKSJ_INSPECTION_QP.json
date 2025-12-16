@@ -1,0 +1,72 @@
+[
+    {
+        "InspectionLot": "50000000010",
+        "MaterialNumber": "34",
+        "Plant": "0001",
+        "InspectionType": "05",
+        "CreatedDate": "/Date(1750723200000)/",
+        "StartDate": "/Date(1750723200000)/",
+        "EndDate": "/Date(1750723200000)/",
+        "LotQuantity": "28",
+        "UoM": "EA",
+        "MaterialDesc": "FG",
+        "UDType": "L",
+        "UsageDecisionCode": "R"
+    },
+    {
+        "InspectionLot": "30000000001",
+        "MaterialNumber": "34",
+        "Plant": "0001",
+        "InspectionType": "03",
+        "CreatedDate": "/Date(1750550400000)/",
+        "StartDate": "/Date(1756684800000)/",
+        "EndDate": "/Date(1756684800000)/",
+        "LotQuantity": "1",
+        "UoM": "EA",
+        "MaterialDesc": "FG",
+        "UDType": "",
+        "UsageDecisionCode": "PENDING"
+    },
+    {
+        "InspectionLot": "50000000012",
+        "MaterialNumber": "34",
+        "Plant": "0001",
+        "InspectionType": "05",
+        "CreatedDate": "/Date(1750809600000)/",
+        "StartDate": "/Date(1750809600000)/",
+        "EndDate": "/Date(1750809600000)/",
+        "LotQuantity": "45",
+        "UoM": "EA",
+        "MaterialDesc": "FG",
+        "UDType": "L",
+        "UsageDecisionCode": "R"
+    },
+    {
+        "InspectionLot": "50000000006",
+        "MaterialNumber": "35",
+        "Plant": "0001",
+        "InspectionType": "05",
+        "CreatedDate": "/Date(1750723200000)/",
+        "StartDate": "/Date(1750723200000)/",
+        "EndDate": "/Date(1750723200000)/",
+        "LotQuantity": "12",
+        "UoM": "PC",
+        "MaterialDesc": "RM",
+        "UDType": "L",
+        "UsageDecisionCode": "A"
+    },
+    {
+        "InspectionLot": "50000000051",
+        "MaterialNumber": "RAW_MAT_SW",
+        "Plant": "1003",
+        "InspectionType": "05",
+        "CreatedDate": "/Date(1763347200000)/",
+        "StartDate": "/Date(1763347200000)/",
+        "EndDate": "/Date(1763347200000)/",
+        "LotQuantity": "10.000",
+        "UoM": "KG",
+        "MaterialDesc": "raw material - 01",
+        "UDType": "L",
+        "UsageDecisionCode": "R"
+    }
+]
