@@ -38,7 +38,8 @@
         "uri": "/sap/opu/odata/sap/ZKSJ_INSPECTION_QP_CDS/",
         "type": "OData",
         "settings": {
-          "odataVersion": "2.0"
+          "odataVersion": "2.0",
+          "localUri": "localService/inspectionService/metadata.xml"
         }
       }
     }
