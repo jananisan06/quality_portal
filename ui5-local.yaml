@@ -42,12 +42,8 @@ server:
             metadataPath: ./webapp/localService/mainService/metadata.xml
             mockdataPath: ./webapp/localService/mainService/data
             generateMockData: true
-          - urlPath: /sap/opu/odata/sap/ZKSJ_INSPECTION_QP_CDS/
-            metadataPath: ./webapp/localService/inspectionService/metadata.xml
-            mockdataPath: ./webapp/localService/inspectionService/data
-            generateMockData: true
           - urlPath: /sap/opu/odata/sap/ZKSJ_INSPECTION_QP_CDS
-            metadataPath: ./webapp/localService/inspectionService/data
+            metadataPath: ./webapp/localService/inspectionService/metadata.xml
             mockdataPath: ./webapp/localService/inspectionService/data
             generateMockData: true
         annotations:
