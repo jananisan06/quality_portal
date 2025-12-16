@@ -1,0 +1,45 @@
+<mvc:View controllerName="com.kaar.qualityportal.controller.ResultRecording"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:l="sap.ui.layout"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:core="sap.ui.core">
+    <Page title="Result Recording" showNavButton="true" navButtonPress="onNavBack">
+        <ObjectHeader title="{inspection>Material}" number="{inspection>LotQuantity}" numberUnit="PC">
+            <attributes>
+                <ObjectAttribute title="Lot Number" text="{inspection>InspectionLot}" />
+                <ObjectAttribute title="Plant" text="{inspection>Plant}" />
+                <ObjectAttribute title="Status" text="{inspection>UsageDecision}" />
+            </attributes>
+        </ObjectHeader>
+        <VBox class="sapUiSmallMargin">
+            <f:SimpleForm title="Record Results" editable="true" layout="ResponsiveGridLayout">
+                <f:content>
+                    <Label text="Unrestricted Stock" />
+                    <Input id="inputUnrestricted" value="{inspection>UnrestrictedStock}" type="Number" />
+                    <Label text="Blocked Stock" />
+                    <Input id="inputBlocked" value="{inspection>BlockStock}" type="Number" />
+                    <Label text="Production Stock" />
+                    <Input id="inputProduction" value="{inspection>ProductionStock}" type="Number" />
+                </f:content>
+            </f:SimpleForm>
+            <Button text="Save Results" type="Emphasized" press="onSaveResults" />
+            
+            <f:SimpleForm title="Usage Decision" editable="true" layout="ResponsiveGridLayout" class="sapUiSmallMarginTop">
+                <f:content>
+                    <Label text="Decision" />
+                    <Select id="decisionSelect" selectedKey="{inspection>UsageDecision}">
+                        <items>
+                            <core:Item key="Pending" text="Pending" />
+                            <core:Item key="Approved" text="Approved" />
+                            <core:Item key="Rejected" text="Rejected" />
+                        </items>
+                    </Select>
+                </f:content>
+            </f:SimpleForm>
+            <HBox>
+                <Button text="Submit Decision" type="Accept" press="onSubmitDecision" class="sapUiTinyMarginEnd" />
+            </HBox>
+        </VBox>
+    </Page>
+</mvc:View>

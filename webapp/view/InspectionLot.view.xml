@@ -1,0 +1,26 @@
+<mvc:View controllerName="com.kaar.qualityportal.controller.InspectionLot"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page title="Inspection Lots" showNavButton="true" navButtonPress="onNavBack">
+        <Table id="inspectionTable" items="{inspection>/ZKSJ_INSPECTION_QP}" inset="false">
+            <columns>
+                <Column><Text text="Lot Number" /></Column>
+                <Column><Text text="Material" /></Column>
+                <Column><Text text="Plant" /></Column>
+                <Column><Text text="Quantity" /></Column>
+                <Column><Text text="Usage Decision" /></Column>
+            </columns>
+            <items>
+                <ColumnListItem type="Navigation" press="onPressLot">
+                    <cells>
+                        <Text text="{inspection>InspectionLot}" />
+                        <Text text="{inspection>Material}" />
+                        <Text text="{inspection>Plant}" />
+                        <Text text="{inspection>LotQuantity}" />
+                        <Text text="{inspection>UsageDecision}" />
+                    </cells>
+                </ColumnListItem>
+            </items>
+        </Table>
+    </Page>
+</mvc:View>

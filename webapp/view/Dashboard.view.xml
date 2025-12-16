@@ -1,0 +1,24 @@
+<mvc:View controllerName="com.kaar.qualityportal.controller.Dashboard"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:l="sap.ui.layout">
+    <Page title="{i18n>appTitle}" showNavButton="true" navButtonPress="onNavBack">
+        <l:Grid defaultSpan="L4 M6 S12" class="sapUiSmallMarginTop">
+            <GenericTile header="Inspection Lot" subheader="Manage Lots" press="onPressInspectionLot">
+                <TileContent>
+                    <ImageContent src="sap-icon://product" />
+                </TileContent>
+            </GenericTile>
+            <GenericTile header="Result Records" subheader="Record Results" press="onPressResultRecording">
+                <TileContent>
+                    <ImageContent src="sap-icon://form" />
+                </TileContent>
+            </GenericTile>
+            <GenericTile header="Usage Decision" subheader="Approve/Reject" press="onPressUsageDecision">
+                <TileContent>
+                    <ImageContent src="sap-icon://accept" />
+                </TileContent>
+            </GenericTile>
+        </l:Grid>
+    </Page>
+</mvc:View>

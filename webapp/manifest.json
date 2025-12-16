@@ -1,0 +1,168 @@
+{
+  "_version": "1.60.0",
+  "sap.app": {
+    "id": "com.kaar.qualityportal",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "0.0.1"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "resources": "resources.json",
+    "sourceTemplate": {
+      "id": "@sap/generator-fiori:basic",
+      "version": "1.20.0",
+      "toolsId": "958c4a25-c92f-4319-8dc4-9eab68c5f003"
+    },
+    "dataSources": {
+      "ZKSJ_LOGIN_QP_CDS_VAN": {
+        "uri": "/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Annotations(TechnicalName='ZKSJ_LOGIN_QP_CDS_VAN',Version='0001')/$value/",
+        "type": "ODataAnnotation",
+        "settings": {
+          "localUri": "localService/mainService/ZKSJ_LOGIN_QP_CDS_VAN.xml"
+        }
+      },
+      "mainService": {
+        "uri": "/sap/opu/odata/sap/ZKSJ_LOGIN_QP_CDS/",
+        "type": "OData",
+        "settings": {
+          "annotations": [
+            "ZKSJ_LOGIN_QP_CDS_VAN"
+          ],
+          "localUri": "localService/mainService/metadata.xml",
+          "odataVersion": "2.0"
+        }
+      },
+      "inspectionService": {
+        "uri": "/sap/opu/odata/sap/ZKSJ_INSPECTION_QP_CDS/",
+        "type": "OData",
+        "settings": {
+          "odataVersion": "2.0"
+        }
+      }
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "flexEnabled": true,
+    "dependencies": {
+      "minUI5Version": "1.120.14",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "com.kaar.qualityportal.i18n.i18n"
+        }
+      },
+      "": {
+        "dataSource": "mainService",
+        "preload": true,
+        "settings": {}
+      },
+      "inspection": {
+        "dataSource": "inspectionService",
+        "preload": true,
+        "settings": {}
+      }
+    },
+    "resources": {
+      "css": [
+        {
+          "uri": "css/style.css"
+        }
+      ]
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "controlAggregation": "pages",
+        "controlId": "app",
+        "transition": "slide",
+        "type": "View",
+        "viewType": "XML",
+        "path": "com.kaar.qualityportal.view",
+        "async": true,
+        "viewPath": "com.kaar.qualityportal.view"
+      },
+      "routes": [
+        {
+          "name": "Login",
+          "pattern": "",
+          "target": [
+            "TargetLogin"
+          ]
+        },
+        {
+          "name": "Dashboard",
+          "pattern": "dashboard",
+          "target": [
+            "TargetDashboard"
+          ]
+        },
+        {
+          "name": "InspectionLot",
+          "pattern": "inspectionLot",
+          "target": [
+            "TargetInspectionLot"
+          ]
+        },
+        {
+          "name": "ResultRecording",
+          "pattern": "resultRecording/{InspectionLot}",
+          "target": [
+            "TargetResultRecording"
+          ]
+        }
+      ],
+      "targets": {
+        "TargetLogin": {
+          "id": "Login",
+          "name": "Login"
+        },
+        "TargetDashboard": {
+          "id": "Dashboard",
+          "name": "Dashboard"
+        },
+        "TargetInspectionLot": {
+          "id": "InspectionLot",
+          "name": "InspectionLot"
+        },
+        "TargetResultRecording": {
+          "id": "ResultRecording",
+          "name": "ResultRecording"
+        }
+      }
+    },
+    "rootView": {
+      "viewName": "com.kaar.qualityportal.view.App",
+      "type": "XML",
+      "id": "App",
+      "async": true
+    }
+  }
+}
