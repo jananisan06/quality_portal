@@ -41,11 +41,11 @@ server:
           - urlPath: /sap/opu/odata/sap/ZKSJ_LOGIN_QP_CDS
             metadataPath: ./webapp/localService/mainService/metadata.xml
             mockdataPath: ./webapp/localService/mainService/data
-            generateMockData: true
+            generateMockData: false
           - urlPath: /sap/opu/odata/sap/ZKSJ_INSPECTION_QP_CDS
             metadataPath: ./webapp/localService/inspectionService/metadata.xml
             mockdataPath: ./webapp/localService/inspectionService/data
-            generateMockData: true
+            generateMockData: false
         annotations:
           - localPath: ./webapp/localService/mainService/ZKSJ_LOGIN_QP_CDS_VAN.xml
             urlPath: /sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Annotations(TechnicalName='ZKSJ_LOGIN_QP_CDS_VAN',Version='0001')/$value/
