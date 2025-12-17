@@ -87,10 +87,8 @@
       },
       "inspection": {
         "dataSource": "inspectionService",
-        "preload": false,
-        "settings": {
-          "useBatch": false
-        }
+        "preload": true,
+        "settings": {}
       }
     },
     "resources": {
