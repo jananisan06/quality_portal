@@ -1,27 +1,32 @@
 sap.ui.define([
     "sap/ui/core/mvc/Controller",
-    "sap/ui/core/UIComponent"
-], (Controller, UIComponent) => {
+    "sap/ui/core/UIComponent",
+    "sap/ui/model/odata/v2/ODataModel"
+], (Controller, UIComponent, ODataModel) => {
     "use strict";
 
     return Controller.extend("com.kaar.qualityportal.controller.InspectionLot", {
         onInit() {
-            // Debugging: Check if model is available
-            const oModel = this.getOwnerComponent().getModel("inspection");
-            if (oModel) {
-                console.log("Inspection model found:", oModel);
-                // Force a metadata load check
-                oModel.metadataLoaded().then(() => {
-                    console.log("Inspection metadata loaded successfully");
-                }).catch((err) => {
-                    console.error("Inspection metadata failed to load:", err);
-                });
-            } else {
-                console.error("Inspection model not found");
-            }
+            // Debugging: Explicitly create the model to verify connectivity
+            var sServiceUrl = "/sap/opu/odata/sap/ZKSJ_INSPECTION_QP_CDS/";
+            var oModel = new sap.ui.model.odata.v2.ODataModel(sServiceUrl, {
+                useBatch: false,
+                defaultBindingMode: "TwoWay"
+            });
+
+            oModel.attachMetadataLoaded(function () {
+                console.log("Explicit ODataModel: Metadata loaded successfully");
+            });
+
+            oModel.attachMetadataFailed(function (oEvent) {
+                console.error("Explicit ODataModel: Metadata failed to load", oEvent.getParameter("response"));
+            });
+
+            this.getView().setModel(oModel, "inspection");
+            console.log("Explicitly set 'inspection' model in onInit");
         },
 
-        onRefresh: function() {
+        onRefresh: function () {
             var oTable = this.byId("inspectionTable");
             var oBinding = oTable.getBinding("items");
             if (oBinding) {
