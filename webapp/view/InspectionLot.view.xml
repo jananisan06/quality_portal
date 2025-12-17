@@ -2,6 +2,9 @@
     xmlns:mvc="sap.ui.core.mvc"
     xmlns="sap.m">
     <Page title="Inspection Lots" showNavButton="true" navButtonPress="onNavBack">
+        <headerContent>
+            <Button icon="sap-icon://refresh" press="onRefresh" tooltip="Refresh Data"/>
+        </headerContent>
         <Table id="inspectionTable" items="{inspection>/ZKSJ_INSPECTION_QP}" inset="false" growing="true" growingThreshold="100">
             <columns>
                 <Column><Text text="Lot Number" /></Column>
